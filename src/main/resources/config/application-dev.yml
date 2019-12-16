@@ -20,6 +20,10 @@ logging:
         edu.cumt.semantic: DEBUG
 
 spring:
+    data:
+        neo4j:
+            username: neo4j
+            password: 123456
     profiles:
         active: dev
         include: swagger

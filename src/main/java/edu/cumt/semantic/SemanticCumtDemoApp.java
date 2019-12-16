@@ -1,9 +1,10 @@
 package edu.cumt.semantic;
 
-import edu.cumt.semantic.config.ApplicationProperties;
-import edu.cumt.semantic.config.DefaultProfileUtil;
+import java.net.InetAddress;
+import java.util.Arrays;
+import java.util.Collection;
 
-import io.github.jhipster.config.JHipsterConstants;
+import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,10 +14,9 @@ import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.core.env.Environment;
 
-import javax.annotation.PostConstruct;
-import java.net.InetAddress;
-import java.util.Arrays;
-import java.util.Collection;
+import edu.cumt.semantic.config.ApplicationProperties;
+import edu.cumt.semantic.config.DefaultProfileUtil;
+import io.github.jhipster.config.JHipsterConstants;
 
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
