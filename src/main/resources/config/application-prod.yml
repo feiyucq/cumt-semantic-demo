@@ -123,4 +123,8 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+  neo4j:
+      uri: bolt://localhost:7687
+      username: neo4j
+      password: 123456

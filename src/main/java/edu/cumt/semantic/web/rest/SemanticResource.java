@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.codahale.metrics.annotation.Timed;
 
+import edu.cumt.semantic.config.ApplicationProperties;
 import edu.cumt.semantic.neo4j.domain.Person;
 import edu.cumt.semantic.neo4j.repository.PersonRepository;
 import edu.cumt.semantic.service.dto.SemanticResourceDTO;
@@ -44,6 +45,8 @@ public class SemanticResource {
 	
 	@Autowired
 	PersonRepository personRepository;
+	@Autowired
+	ApplicationProperties applicationProperties;
 	
 	
 	
@@ -53,7 +56,6 @@ public class SemanticResource {
 	@Transactional
 	public ResponseEntity<?> testNeo4j(HttpServletRequest request, HttpServletResponse response){
 		personRepository.deleteAll();
-		
 		return new ResponseEntity<>("delete", HttpStatus.OK);
 	}
 	
@@ -61,8 +63,6 @@ public class SemanticResource {
 	@Timed
 	@Transactional
 	public ResponseEntity<?> testNeo4j2(HttpServletRequest request, HttpServletResponse response){
-		
-
 		Person greg = new Person("Greg");
 		Person roy = new Person("Roy");
 		Person craig = new Person("Craig");
